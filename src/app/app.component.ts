@@ -1,14 +1,25 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  template: `
+    <h1>Users Over 20</h1>
+    <div *ngFor="let user of users">
+      <ng-container *ngIf="user.age > 20">
+        {{ user.firstname }} {{ user.lastname }} - {{ user.age }}
+      </ng-container>
+    </div>
+  `,
 })
 export class AppComponent {
-  title = 'DavitDavidiani';
+  users = [
+    { firstname: 'Dato', lastname: 'Davidiani', age: 19 },
+    { firstname: 'Levani', lastname: 'Iluridze', age: 19 },
+    { firstname: 'Saba', lastname: 'Basharuli', age: 20 },
+    { firstname: 'Koka', lastname: 'Gabisonia', age: 19 },
+    { firstname: 'Giorgi ', lastname: 'Farmaniani', age: 22 },
+  ];
+
+  parentUsers = [
+    
+  ];
 }

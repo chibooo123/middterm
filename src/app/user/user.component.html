@@ -1,0 +1,7 @@
+<h1>Array from parent component has been transfered</h1>
+
+<h2>Data Received from Parent Component</h2>
+<div *ngFor="let user of users">
+  {{ user.Firstname }} {{ user.Lastname }}
+</div>
+<button (click)="displayUsers()">Display Users</button>
